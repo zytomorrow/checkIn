@@ -26,10 +26,14 @@ class CheckIn(object):
 
 
 if __name__ == "__main__":
-    base_url = "https://cmcc.bid"
-    # email = "z794672847@qq.com"
-    email = os.system("echo ${{ secrets.cmcc_email }}")
-    password = "Zy950722"
-    client = CheckIn(base_url)
-    client.login(email, password)
-    client.checkin()
+    # base_url = "https://cmcc.bid"
+    # # email = "z794672847@qq.com"
+    # email = os.system("echo ${{ secrets.cmcc_email }}")
+    # password = "Zy950722"
+    # client = CheckIn(base_url)
+    # client.login(email, password)
+    # client.checkin()
+    print(os.environ)
+    print(os.environ.get('test'))
+    if (os.environ.get('test')) == "test":
+        print("ok")
