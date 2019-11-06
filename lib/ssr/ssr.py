@@ -2,6 +2,7 @@
 
 import requests
 from urllib.parse import urljoin
+import os
 
 
 class CheckIn(object):
@@ -26,7 +27,8 @@ class CheckIn(object):
 
 if __name__ == "__main__":
     base_url = "https://cmcc.bid"
-    email = "z794672847@qq.com"
+    # email = "z794672847@qq.com"
+    email = os.system("echo ${{ secrets.cmcc_email }}")
     password = "Zy950722"
     client = CheckIn(base_url)
     client.login(email, password)
